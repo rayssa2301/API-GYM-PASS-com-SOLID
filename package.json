@@ -7,8 +7,10 @@
     "start:dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
-    "test":  "vitest run",
-    "vitest:watch": "vitest"
+    "test": "vitest run",
+    "vitest:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui":"vitest --ui --api 9527"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "20.10.4",
+    "@vitest/ui": "1.1.1",
     "prisma": "5.7.0",
     "tsup": "8.0.1",
     "tsx": "4.6.2",
