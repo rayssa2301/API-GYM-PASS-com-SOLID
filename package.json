@@ -10,7 +10,7 @@
     "test": "vitest run",
     "vitest:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui":"vitest --ui --api 9527"
+    "test:ui": "vitest --ui --api 9527"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "@types/bcryptjs": "2.4.6",
     "bcryptjs": "2.4.3",
     "D": "1.0.0",
+    "dayjs": "1.11.10",
     "dotenv": "16.3.1",
     "fastify": "4.25.0",
     "zod": "3.22.4"
