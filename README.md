@@ -18,7 +18,7 @@ GymPass
 ## RNFs - Regras de Negócio
 
 - [x] o usuário não pode se cadastrar com um e-mail duplicado;
-- [ ] o usuário não pode fazer dois check-ins no mesmo dia;
+- [x] o usuário não pode fazer dois check-ins no mesmo dia;
 - [ ] o usuário não pode fazer check-in se não estiver perto (100m) da academia;
 - [ ] o check-in só pode ser validado até 20 minutos após criado;
 - [ ] o check-in só pode ser validado por administradores; 
