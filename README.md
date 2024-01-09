@@ -12,7 +12,7 @@ GymPass
 -[x] Deve ser possível o usuário buscar academias proximas;
 -[x] Deve ser possível o usuário buscar academias por nome;
 -[x] Deve ser possível o usuário realizar check-in em uma academia;
--[ ] Deve ser possível validar o check-in realizado pelo usuário;
+-[x] Deve ser possível validar o check-in realizado pelo usuário;
 -[x] Deve ser possível cadastrar uma academia;
 
 ## RNFs - Regras de Negócio
