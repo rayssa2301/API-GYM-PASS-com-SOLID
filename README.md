@@ -4,16 +4,16 @@ GymPass
 
 ## RFs - Requisitos Funcionais
 
--[x] Deve ser possível se cadastrar;
--[x] Deve ser possível se autenticar;
--[x] Deve ser possível obter o perfil do usuário logado;
--[x] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
--[x] Deve ser possível o usuário obter o histórico de check-ins realizados;
--[x] Deve ser possível o usuário buscar academias proximas;
--[x] Deve ser possível o usuário buscar academias por nome;
--[x] Deve ser possível o usuário realizar check-in em uma academia;
--[x] Deve ser possível validar o check-in realizado pelo usuário;
--[x] Deve ser possível cadastrar uma academia;
+- [x] Deve ser possível se cadastrar;
+- [x] Deve ser possível se autenticar;git
+- [x] Deve ser possível obter o perfil do usuário logado;
+- [x] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
+- [x] Deve ser possível o usuário obter o histórico de check-ins realizados;
+- [x] Deve ser possível o usuário buscar academias proximas;
+- [x] Deve ser possível o usuário buscar academias por nome;
+- [x] Deve ser possível o usuário realizar check-in em uma academia;
+- [x] Deve ser possível validar o check-in realizado pelo usuário;
+- [x] Deve ser possível cadastrar uma academia;
 
 ## RNFs - Regras de Negócio
 
