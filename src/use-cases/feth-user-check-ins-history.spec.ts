@@ -1,7 +1,6 @@
 import { expect, describe, it, beforeEach, vi, afterEach } from "vitest";
-import { InMemoryCheckInsRepository } from "../repositories/in-memory/in-memory-checkins-repository";
+import { InMemoryCheckInsRepository } from "../repositories/in-memory/in-memory-check-ins-repository";
 import { FethUserCheckInsHistoryUseCase } from "./feth-user-check-ins-history";
-import { a } from "vitest/dist/suite-dF4WyktM";
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let sut: FethUserCheckInsHistoryUseCase;

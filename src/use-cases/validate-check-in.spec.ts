@@ -1,7 +1,9 @@
 import { CheckIn } from "@prisma/client";
-import { expect, describe, it, beforeEach, afterEach } from "vitest";
-import { InMemoryCheckInsRepository } from "../repositories/in-memory/in-memory-checkins-repository";
+import { expect, describe, it, beforeEach, afterEach, vi } from "vitest";
+import { InMemoryCheckInsRepository } from "../repositories/in-memory/in-memory-check-ins-repository";
 import { ValidateCheckInUseCase } from "./validate-check-in";
+import dayjs from "dayjs";
+import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let sut: ValidateCheckInUseCase;
@@ -12,9 +14,9 @@ describe("validate check-in Use Case", () => {
     sut = new ValidateCheckInUseCase(checkInsRepository);
   });
 
-  // vi.useFakeTimers();
+  vi.useFakeTimers();
   afterEach(() => {
-    // vi.useRealTimers();
+    vi.useRealTimers();
   });
 
   it("should be able to validate the check in", async () => {
@@ -32,10 +34,30 @@ describe("validate check-in Use Case", () => {
     expect(checkInsRepository.items[0].valiidated_at).toEqual(expect.any(Date));
   });
   it("should not be able to validate inexistent checkin", async () => {
-    const { checkIn } = await sut.execute({
-      checkInId: "inexistent-checkin-id",
+    await expect(() =>
+      sut.execute({
+        checkInId: "inexistent-checkin-id",
+      })
+    ).rejects.toBeInstanceOf(ResourceNotFoundError);
+  });
+
+  it("should not be able to validate the checkin after 20 minutes of its creation", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date(2024, 0, 1, 13, 0, 0));
+
+    const createdCheckIn = await checkInsRepository.create({
+      gym_id: "gym-id",
+      user_id: "user-id",
     });
 
-    expect(checkIn.valiidated_at).toEqual(expect.any(Date));
+    const twentyMinutesInMs = 1000 * 60 * 21;
+
+    vi.advanceTimersByTime(twentyMinutesInMs);
+
+    await expect(async () => {
+      await sut.execute({
+        checkInId: createdCheckIn.id,
+      });
+    }).rejects.toBeInstanceOf(Error);
   });
 });

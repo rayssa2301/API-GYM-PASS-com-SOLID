@@ -14,7 +14,7 @@ describe("fetch User check-in History", () => {
   it("should be able to search for gyms", async () => {
     await gymsRepository.create({
       id: "gym-01",
-      name: "gym-01",
+      title: "gym-01",
       phone: "",
       description: "gym-description",
       latitude: -5.0700239,
@@ -23,7 +23,7 @@ describe("fetch User check-in History", () => {
 
     await gymsRepository.create({
       id: "gym-02",
-      name: "gym-02",
+      title: "gym-02",
       phone: "",
       description: "gym-description",
       latitude: -5.0700239,
@@ -43,7 +43,7 @@ describe("fetch User check-in History", () => {
     for (let i = 1; i <= 22; i++) {
       await gymsRepository.create({
         id: `gym-${i}`,
-        name: `gym-${i}`,
+        title: `gym-${i}`,
         phone: "",
         description: "gym-description",
         latitude: -5.0700239,
@@ -58,8 +58,8 @@ describe("fetch User check-in History", () => {
 
     expect(gyms).toHaveLength(2);
     expect(gyms).toEqual([
-      expect.objectContaining({ name: "gym-21" }),
-      expect.objectContaining({ name: "gym-22" }),
+      expect.objectContaining({ title: "gym-21" }),
+      expect.objectContaining({ title: "gym-22" }),
     ]);
   });
 });
