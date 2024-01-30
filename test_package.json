@@ -1,0 +1,4 @@
+"scripts": {
+  "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
+  "test": "vitest run --dir src/use-cases"
+}
